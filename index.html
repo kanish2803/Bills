@@ -20,16 +20,6 @@
       <div><strong>Customer Name:</strong> <input type="text" id="custName"></div>
       <div><strong>Phone Number:</strong> <input type="text" id="phone"></div>
       <div><strong>Date:</strong> <input type="date" id="date"></div>
-      <div>
-        <label><input type="checkbox" id="enableOTP"> Send OTP to customer</label>
-        <button type="button" onclick="sendOTP()">Send OTP</button>
-      </div>
-      <div id="otpSection" style="display: none;">
-        <strong>Enter OTP:</strong>
-        <input type="text" id="otpInput" maxlength="4" placeholder="4-digit OTP">
-        <button onclick="verifyOTP()">Verify OTP</button>
-        <span id="otpStatus"></span>
-      </div>
     </section>
 
     <section class="product-section">
@@ -55,7 +45,7 @@
           <option value="Other">Other</option>
         </select>
         <input type="text" id="productName" placeholder="Product Name">
-        <input type="text" id="productId" placeholder="IMEI (for Mobile)">
+        <input type="text" id="productId" placeholder="IMEI (15-digit only)" maxlength="15">
         <input type="number" id="qty" placeholder="Qty">
         <input type="number" id="price" placeholder="Price">
         <button onclick="addProduct()">Add</button>
