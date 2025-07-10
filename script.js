@@ -1,11 +1,11 @@
 function addProduct() {
-  const type = document.getElementById('productType').value;
-  const name = document.getElementById('productName').value;
-  const id = document.getElementById('productId').value;
-  const qty = +document.getElementById('qty').value;
-  const price = +document.getElementById('price').value;
+  const type = document.getElementById("productType").value;
+  const name = document.getElementById("productName").value;
+  const id = document.getElementById("productId").value;
+  const qty = +document.getElementById("qty").value;
+  const price = +document.getElementById("price").value;
 
-  if (!name || !qty || !price) return alert("Fill all product fields");
+  if (!name || !qty || !price) return alert("Please fill all product fields");
 
   const table = document.querySelector("#productTable tbody");
   const row = table.insertRow();
@@ -28,9 +28,9 @@ function updateTotal() {
 }
 
 function generateBill() {
-  document.querySelectorAll('.no-print').forEach(el => el.style.display = 'none');
+  document.querySelectorAll(".no-print").forEach(el => el.style.display = "none");
   window.print();
-  document.querySelectorAll('.no-print').forEach(el => el.style.display = '');
+  document.querySelectorAll(".no-print").forEach(el => el.style.display = "");
 }
 
 function downloadPDF() {
@@ -63,11 +63,9 @@ function startScanner() {
 
   Quagga.onDetected(data => {
     const code = data.codeResult.code;
-    if (/^\\d{15}$/.test(code)) {
+    if (code) {
       document.getElementById("productId").value = code;
       stopScanner();
-    } else {
-      alert("Invalid IMEI. Must be 15-digit number.");
     }
   });
 }
