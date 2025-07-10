@@ -1,0 +1,109 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f8f8;
+  padding: 10px;
+}
+
+.bill-container {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+header, .info, .product-section, .summary, .footer, .thankyou {
+  margin-bottom: 20px;
+}
+
+header h1 {
+  text-align: center;
+  margin: 0;
+  font-size: 26px;
+}
+
+.info input {
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid #999;
+  text-align: left;
+}
+
+.add-product input,
+.add-product select {
+  margin: 5px;
+  padding: 5px;
+}
+
+.add-product button {
+  margin: 5px;
+  padding: 5px 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.seal, .signature {
+  height: 160px;
+  width: 45%;
+  border: 2px dashed #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+#scannerContainer {
+  display: none;
+  margin-top: 10px;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  background: #eee;
+}
+
+#scanner {
+  width: 100%;
+  height: 180px;
+  border: 2px solid #007bff;
+  position: relative;
+}
+
+#scanner::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: red;
+  animation: scanline 2s linear infinite;
+}
+
+@keyframes scanline {
+  0% { top: 0; }
+  50% { top: 90%; }
+  100% { top: 0; }
+}
+
+.thankyou {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
